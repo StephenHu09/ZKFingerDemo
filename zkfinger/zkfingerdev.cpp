@@ -8,7 +8,8 @@
 QByteArray QStringToChar(const QString& str)
 {
     /* 返回值可通过如下方式使用： reinterpret_cast<unsigned char*>(byteArray.data()) */
-    QByteArray byteArray = QByteArray::fromBase64(str.toLatin1().data());
+    QByteArray baStr = str.toLatin1();
+    QByteArray byteArray = QByteArray::fromBase64(baStr.data());
     return byteArray;
 }
 
